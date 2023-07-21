@@ -17,13 +17,13 @@ spec:
     spec:
       containers:
         - name: wso2is-mysql
-          resources:
-            requests:
-              memory: "200Mi"
-              cpu: "100m"
-            limits:
-              memory: "500Mi"
-              cpu: "200m"
+          # resources:
+          #   requests:
+          #     memory: "200Mi"
+          #     cpu: "100m"
+          #   limits:
+          #     memory: "500Mi"
+          #     cpu: "200m"
           image: mysql:5.7
           livenessProbe:
             exec:

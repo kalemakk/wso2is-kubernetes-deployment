@@ -1,0 +1,41 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: wso2is-ingress
+  namespace: wso2mi
+spec:
+  ingressClassName: nginx
+  # tls:
+  # - hosts:
+  #   - cafe.example.com
+  #   secretName: cafe-secret
+  rules:
+  - host: localhost
+    http:
+      paths:
+      - path: /service-desk/projects
+        pathType: Prefix
+        backend:
+          service:
+            name: wso2mi-service
+            port:
+              number: 8290
+      
+      - path: /service-desk/users
+        pathType: Prefix
+        backend:
+          service:
+            name: wso2mi-service
+            port:
+              number: 8290
+
+      - path: /healthz
+        pathType: Prefix
+        backend:
+          service:
+            name: wso2mi-service
+            port:
+              number: 8290
+
+              
+              

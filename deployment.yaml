@@ -47,7 +47,7 @@ spec:
             mountPath: /mysql-connector-jar
       containers:
       - name: wso2is
-        image: docker.wso2.com/wso2is:6.1.0.0
+        image: arnoldkksybyl/wso2is:latest
         livenessProbe:
           exec:
             command:
@@ -98,7 +98,7 @@ spec:
           mountPath: /home/wso2carbon/wso2-artifact-volume/repository/components/dropins
       serviceAccountName: "wso2svc-account"
       # imagePullSecrets:
-      #   - name: wso2is-deployment-creds
+        # - name: wso2is-deployment-creds
       volumes:
       - name: identity-server-conf
         configMap:
